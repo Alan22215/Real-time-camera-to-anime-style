@@ -122,13 +122,7 @@ Copy code
 
 ---
 
-If you want, I can also:
-- ✅ Customize this README for **college submission**
-- ✅ Add **screenshots section**
-- ✅ Write a **project report abstract**
-- ✅ Make it **resume / LinkedIn ready**
 
-Just tell me 👍
 
 
 
