@@ -3,9 +3,9 @@ import torch
 import numpy as np
 from PIL import Image
 
-# ---------------------------
+
 # 1. Device and model loading
-# ---------------------------
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Using device:", device)
 
@@ -26,9 +26,9 @@ face2paint = torch.hub.load(
 print("Model loaded.")
 
 
-# ---------------------------
+
 # 2. Helper: frame -> anime
-# ---------------------------
+
 @torch.no_grad()
 def animefy_frame_bgr(frame_bgr):
     """
@@ -47,9 +47,8 @@ def animefy_frame_bgr(frame_bgr):
     return out_bgr
 
 
-# ---------------------------
 # 3. Webcam loop
-# ---------------------------
+
 def main():
     # 0 = default webcam
     cap = cv2.VideoCapture(0)
@@ -57,7 +56,6 @@ def main():
         print("Error: cannot open webcam.")
         return
 
-    # Optional: set smaller resolution for speed
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
@@ -69,10 +67,10 @@ def main():
             print("Failed to grab frame.")
             break
 
-        # Mirror for nicer view (optional)
+      
         frame = cv2.flip(frame, 1)
 
-        # Convert to anime
+        
         anime_frame = animefy_frame_bgr(frame)
 
         # Show both
@@ -89,3 +87,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
